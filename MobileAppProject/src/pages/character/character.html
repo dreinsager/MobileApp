@@ -12,8 +12,17 @@
       </ion-navbar>
 </ion-header>
 
-
 <ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="gender">
+        <ion-option value="male">Male</ion-option>
+        <ion-option value="fmale">Female</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  
   
 </ion-content>
 
