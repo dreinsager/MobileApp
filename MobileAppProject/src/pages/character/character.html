@@ -13,6 +13,13 @@
 </ion-header>
 
 <ion-content>
+    <ion-list>
+
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-list>
   <ion-list>
     <ion-item>
       <ion-label>Gender</ion-label>
@@ -21,6 +28,21 @@
         <ion-option value="fmale">Female</ion-option>
       </ion-select>
     </ion-item>
+    <ion-item>
+        <ion-label>Class</ion-label>
+        <ion-select [(ngModel)]="class">
+          <ion-option value="male"></ion-option>
+          <ion-option value="fmale"></ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Race</ion-label>
+          <ion-select [(ngModel)]="race">
+            <ion-option value="male"></ion-option>
+            <ion-option value="fmale"></ion-option>
+          </ion-select>
+        </ion-item>
+    
   </ion-list>
   
   
