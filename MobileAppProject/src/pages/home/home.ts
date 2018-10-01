@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TestPage } from '../test/test';
+import { CharacterPage } from '../character/character';
 
 
 @Component({
@@ -13,6 +14,10 @@ export class HomePage {
   }
   toDiceRoll(){
     this.navCtrl.push(TestPage);
-  } 
+  }
+
+  toCharPage(){
+    this.navCtrl.push(CharacterPage);
+  }
 
 }
