@@ -7,7 +7,7 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content class="bg" padding>
+<ion-content class="" padding>
   <ion-slides pager>
     <ion-slide class="welcome">
         <h1>Welcome</h1>
@@ -18,16 +18,9 @@
     </ion-slide>
     <ion-slide class="flash">
       <h1>Flash Cards</h1>
-      <ion-card>
-          <img src="./assets/imgs/DD1.png"/>
-          <div class="card-title">Test</div>
-          <div class="card-subtitle">41 Listings</div>
-        </ion-card>
-      
     </ion-slide>
     <ion-slide class="char">
         <p>Here a display of current characters will be showing. You can click below to add a new character</p>
-
          <button ion-button icon-start  (click)="toCharPage()" color="mine">
           <ion-icon name="add"></ion-icon>
           Add a Character
