@@ -10,12 +10,28 @@
 <ion-content class="" padding>
   <ion-slides pager>
     <ion-slide class="welcome">
-        <img class="logo" src="./assets/imgs/dd.jpg"><br><br>
-        <h1>Welcome</h1>
-        <button ion-button icon-start (click)="toDiceRoll()" color="mine">
-            <ion-icon name="cube"></ion-icon>
-            Take a Roll!!!
-          </button>
+        <img class="logo" src="./assets/imgs/dd.jpg">
+        <div class="test">
+        <ion-list>
+            <ion-item>
+              <ion-label>Username</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>Password</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item><br>
+            <button ion-button full color="blue">
+                Submit
+              </button><br>
+            <button ion-button icon-start (click)="toDiceRoll()" color="mine">
+                <ion-icon name="cube"></ion-icon>
+                Dice
+              </button>
+    
+          </ion-list>
+        </div>
     </ion-slide>
     <ion-slide class="flash">
       <h1>Flash Cards</h1>
