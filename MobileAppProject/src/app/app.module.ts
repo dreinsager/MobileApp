@@ -7,6 +7,11 @@ import { HomePage } from '../pages/home/home';
 import { TestPage } from '../pages/test/test';
 import { CharacterPage } from '../pages/character/character';
 import { AboutPage } from '../pages/about/about';
+import { ChardescrPage } from '../pages/chardescr/chardescr';
+import { RacedescrPage } from '../pages/racedescr/racedescr';
+import { NotesPage } from '../pages/notes/notes';
+
+
 
 
 
@@ -19,7 +24,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TestPage,
     CharacterPage,
-    AboutPage
+    AboutPage,
+    ChardescrPage,
+    RacedescrPage,
+    NotesPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TestPage,
     CharacterPage,
-    AboutPage
+    AboutPage,
+    ChardescrPage,
+    RacedescrPage,
+    NotesPage
+
+
   ],
   providers: [
     StatusBar,

@@ -7,6 +7,11 @@ import { HomePage } from '../pages/home/home';
 import { TestPage } from '../pages/test/test';
 import { CharacterPage } from '../pages/character/character';
 import { AboutPage } from '../pages/about/about';
+import { ChardescrPage } from '../pages/chardescr/chardescr';
+import { RacedescrPage } from '../pages/racedescr/racedescr';
+import { NotesPage } from '../pages/notes/notes';
+
+
 
 
 
@@ -28,8 +33,13 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage, icon:"home" },
       { title: 'Dice Roll', component: TestPage, icon:"md-cog" },
-      { title: 'Character', component: CharacterPage , icon:"md-contact"},
+      { title: 'Character', component: CharacterPage , icon:"md-body"},
+      { title: 'Character Description', component: ChardescrPage, icon: "information-circle" },
+      { title: 'Race Description', component: RacedescrPage, icon: "information-circle" },
+      { title: 'Notes', component: NotesPage, icon: "md-albums" },
       { title: 'About', component: AboutPage, icon: "information-circle" }
+
+
 
 
 

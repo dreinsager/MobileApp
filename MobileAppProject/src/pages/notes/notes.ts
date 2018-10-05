@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
+
 /**
- * Generated class for the CharacterPage page.
+ * Generated class for the NotesPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,24 +12,24 @@ import { AlertController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-character',
-  templateUrl: 'character.html',
+  selector: 'page-notes',
+  templateUrl: 'notes.html',
 })
-export class CharacterPage {
+export class NotesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
   }
 
   onSubmit() {
     const alert = this.alertCtrl.create({
-      subTitle: 'This will end information to database and add to the character page',
+      subTitle: 'This will send information to database and add to the notes page',
       buttons: ['OK']
     });
     alert.present();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CharacterPage');
+    console.log('ionViewDidLoad NotesPage');
   }
 
 }
