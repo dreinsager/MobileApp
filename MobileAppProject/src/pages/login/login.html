@@ -7,12 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <img class="logo" src="./assets/imgs/dd.jpg">
+  <div class="test">
+  <ion-list>
+      <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item><br>
+      <button ion-button full color="blue" (click)="toHome()">
+          Submit
+        </button><br>
+    </ion-list>
+  </div>
 </ion-content>

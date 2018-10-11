@@ -10,6 +10,8 @@ import { AboutPage } from '../pages/about/about';
 import { ChardescrPage } from '../pages/chardescr/chardescr';
 import { RacedescrPage } from '../pages/racedescr/racedescr';
 import { NotesPage } from '../pages/notes/notes';
+import { LoginPage } from '../pages/login/login';
+
 
 
 
@@ -22,7 +24,7 @@ import { NotesPage } from '../pages/notes/notes';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any, icon: any}>;
 

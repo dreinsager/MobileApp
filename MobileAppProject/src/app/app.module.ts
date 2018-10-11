@@ -10,6 +10,8 @@ import { AboutPage } from '../pages/about/about';
 import { ChardescrPage } from '../pages/chardescr/chardescr';
 import { RacedescrPage } from '../pages/racedescr/racedescr';
 import { NotesPage } from '../pages/notes/notes';
+import { LoginPage } from '../pages/login/login';
+
 
 
 
@@ -27,6 +29,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ChardescrPage,
     RacedescrPage,
+    LoginPage,
     NotesPage
   ],
   imports: [
@@ -42,6 +45,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ChardescrPage,
     RacedescrPage,
+    LoginPage,
     NotesPage
 
 
