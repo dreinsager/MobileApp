@@ -11,6 +11,8 @@ import { ChardescrPage } from '../pages/chardescr/chardescr';
 import { RacedescrPage } from '../pages/racedescr/racedescr';
 import { NotesPage } from '../pages/notes/notes';
 import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+
 
 
 
@@ -30,6 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ChardescrPage,
     RacedescrPage,
     LoginPage,
+    RegisterPage,
     NotesPage
   ],
   imports: [
@@ -46,6 +49,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ChardescrPage,
     RacedescrPage,
     LoginPage,
+    RegisterPage,
     NotesPage
 
 
