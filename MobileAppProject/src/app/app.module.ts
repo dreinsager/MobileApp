@@ -24,27 +24,39 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AboutPageModule } from '../pages/about/about.module';
+import { CharacterPageModule } from '../pages/character/character.module';
+import { ChardescrPageModule } from '../pages/chardescr/chardescr.module';
+import { LoginPageModule } from '../pages/login/login.module';
+import { RegisterPageModule } from '../pages/register/register.module';
+import { TestPageModule } from '../pages/test/test.module';
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    TestPage,
-    CharacterPage,
-    AboutPage,
-    ChardescrPage,
-    RacedescrPage,
-    LoginPage,
-    RegisterPage,
-    NotesPage,
+    // TestPage,
+    // CharacterPage,
+    // AboutPage,
+    // ChardescrPage,
+    // RacedescrPage,
+    // LoginPage,
+    // RegisterPage,
+    // NotesPage,
 
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AboutPageModule,
+    CharacterPageModule,
+    ChardescrPageModule,
+    LoginPageModule,
+    RegisterPageModule,
+    TestPageModule,
 
   ],
   bootstrap: [IonicApp],

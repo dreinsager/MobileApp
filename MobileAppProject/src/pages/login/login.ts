@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
+import { User } from '../../app/models/user';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
-import { User } from 'firebase';
 
 
 /**
@@ -21,13 +22,23 @@ export class LoginPage {
 
   user = {} as User;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private ofAuth: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
   }
 
 
 
-  Login(){
-    
+  async Login(user: User){
+    try{
+    const result = this.ofAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+    console.log(result);
+    if(result){
+      this.navCtrl.setRoot(HomePage);
+    }
+
+  }
+  catch(e){
+    console.error(e);
+  }
   }
 
     toRegister(){
