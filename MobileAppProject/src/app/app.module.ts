@@ -13,8 +13,18 @@ import { NotesPage } from '../pages/notes/notes';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
+const firebaseAuth = {
+  apiKey: "AIzaSyBRLLfIzzzzXa5Ag1N5Gi95sOw2qbjKq3w",
+  authDomain: "mobileapp-ddee0.firebaseapp.com",
+  databaseURL: "https://mobileapp-ddee0.firebaseio.com",
+  projectId: "mobileapp-ddee0",
+  storageBucket: "",
+  messagingSenderId: "570238485983"
+};
 
 
 
@@ -33,11 +43,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RacedescrPage,
     LoginPage,
     RegisterPage,
-    NotesPage
+    NotesPage,
+
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireAuthModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [

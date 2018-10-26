@@ -17,13 +17,13 @@
   <ion-list>
     <ion-item>
       <ion-label>Email :</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" #username></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Password :</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" #password></ion-input>
     </ion-item><br>
-    <button ion-button full color="mine">
+    <button ion-button full color="mine" (click)="registerPage()">
       Submit
     </button><br>
 </ion-list>
