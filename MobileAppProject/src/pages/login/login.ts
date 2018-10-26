@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home';
+import { User } from 'firebase';
 
 
 /**
@@ -18,11 +19,15 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
+  user = {} as User;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  toHome(){
-    this.navCtrl.push(HomePage);
+
+
+  Login(){
+    
   }
 
     toRegister(){

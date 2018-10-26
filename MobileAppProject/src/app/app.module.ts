@@ -13,24 +13,18 @@ import { NotesPage } from '../pages/notes/notes';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from "angularfire2";
 
 
-const firebaseAuth = {
-  apiKey: "AIzaSyBRLLfIzzzzXa5Ag1N5Gi95sOw2qbjKq3w",
-  authDomain: "mobileapp-ddee0.firebaseapp.com",
-  databaseURL: "https://mobileapp-ddee0.firebaseio.com",
-  projectId: "mobileapp-ddee0",
-  storageBucket: "",
-  messagingSenderId: "570238485983"
-};
 
 
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FIREBASE_CONFIG } from './app.firebase.config';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +43,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule
 
   ],
