@@ -3,35 +3,20 @@
       <button ion-button menuToggle>
           <ion-icon name="ios-menu-outline"></ion-icon>
       </button>
-      <ion-title>Menu</ion-title>
+      <ion-title>Dungeons&Dragons</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content class="" padding>
   <ion-slides pager>
     <ion-slide class="welcome">
-        <img class="logo" src="./assets/imgs/dd.jpg">
-        <div class="test">
-        <ion-list>
-            <ion-item>
-              <ion-label>Username</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-          
-            <ion-item>
-              <ion-label>Password</ion-label>
-              <ion-input type="password"></ion-input>
-            </ion-item><br>
-            <button ion-button full color="blue" (click)="onSubmit()">
-                Submit
-              </button><br>
+        <img class="logo" src="./assets/imgs/dd.jpg"><br>
+        <p>Welcom to Dungeons&Dragons!! Below you may go to the Dice Page where you may
+          roll the dice</p>
             <button ion-button icon-start (click)="toDiceRoll()" color="mine">
                 <ion-icon name="cube"></ion-icon>
                 Dice
               </button>
-    
-          </ion-list>
-        </div>
     </ion-slide>
     <ion-slide class="flash">
       <h1>What descriptions would you like to see?</h1>
