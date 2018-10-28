@@ -26,7 +26,7 @@ import { RegisterPage } from '../pages/register/register';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any, icon: any}>;
 
@@ -41,7 +41,9 @@ export class MyApp {
       { title: 'Character Description', component: ChardescrPage, icon: "information-circle" },
       { title: 'Race Description', component: RacedescrPage, icon: "information-circle" },
       { title: 'Notes', component: NotesPage, icon: "md-albums" },
-      { title: 'About', component: AboutPage, icon: "information-circle" }
+      { title: 'About', component: AboutPage, icon: "information-circle" },
+      { title: 'LogOut', component: LoginPage, icon: "exit" }
+
 
 
 

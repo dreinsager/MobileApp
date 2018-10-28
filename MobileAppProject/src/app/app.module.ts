@@ -14,6 +14,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 
 import { AngularFireModule } from "angularfire2";
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 
@@ -30,6 +31,8 @@ import { ChardescrPageModule } from '../pages/chardescr/chardescr.module';
 import { LoginPageModule } from '../pages/login/login.module';
 import { RegisterPageModule } from '../pages/register/register.module';
 import { TestPageModule } from '../pages/test/test.module';
+import { NotesPageModule } from '../pages/notes/notes.module';
+import { RacedescrPageModule } from '../pages/racedescr/racedescr.module';
 
 
 @NgModule({
@@ -51,12 +54,16 @@ import { TestPageModule } from '../pages/test/test.module';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     AboutPageModule,
     CharacterPageModule,
     ChardescrPageModule,
     LoginPageModule,
     RegisterPageModule,
     TestPageModule,
+    NotesPageModule,
+    RacedescrPageModule,
+
 
   ],
   bootstrap: [IonicApp],

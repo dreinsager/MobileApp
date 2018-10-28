@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { Character } from '../../app/models/user';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 /**
  * Generated class for the CharacterPage page.
@@ -16,15 +18,22 @@ import { AlertController } from 'ionic-angular';
 })
 export class CharacterPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  character = {} as Character
+
+  characterRef$: AngularFireList<Character>
+
+  
+  constructor(private database: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+    this.characterRef$ = this.database.list('character-list');
   }
 
-  onSubmit() {
-    const alert = this.alertCtrl.create({
-      subTitle: 'This will end information to database and add to the character page',
-      buttons: ['OK']
-    });
-    alert.present();
+  onSubmit(character: Character) {
+    //Pushes list of characters to firebase database
+     this.characterRef$.push(this.character);
+    //resets character
+    this.character = {} as Character;
+    //redirect user to character page
+    this.navCtrl.pop();
   }
 
   ionViewDidLoad() {

@@ -6,6 +6,10 @@ import { ChardescrPage } from '../chardescr/chardescr';
 import { RacedescrPage } from '../racedescr/racedescr';
 import { NotesPage } from '../notes/notes';
 import { AlertController } from 'ionic-angular';
+import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import { Character } from '../../app/models/user';
+import { Observable } from 'rxjs/Observable';
+
 
 
 
@@ -16,7 +20,14 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+
+  characterRef$: Observable<any[]>
+
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private database: AngularFireDatabase) {
+
+    this.characterRef$ = this.database.list('character-list').valueChanges();
+    
+
 
   }
 

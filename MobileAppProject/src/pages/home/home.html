@@ -37,7 +37,7 @@
       <h1>What descriptions would you like to see?</h1>
       <button ion-button icon-start (click)="toCharDesc()" color="mine">
           <ion-icon name="md-body"></ion-icon>
-          Character
+          Class
         </button>
         <button ion-button icon-start (click)="toRace()" color="mine">
             <ion-icon name="md-bonfire"></ion-icon>
@@ -45,7 +45,14 @@
           </button>
     </ion-slide>
     <ion-slide class="char">
-        <p>Here a display of current characters will be showing. You can click below to add a new character</p>
+        <ion-list>
+            <ion-item *ngFor="let item of characterRef$ | async">
+              <p>Character Name:{{item.charName}}<br></p>
+              <p>Gender:{{item.gender}}<br></p>
+              <p>Class:{{item.class}}<br></p>
+              <p>Race:{{item.race}}<br></p>
+            </ion-item>
+          </ion-list>      
          <button ion-button icon-start  (click)="toCharPage()" color="mine">
           <ion-icon name="add"></ion-icon>
           Add a Character
@@ -59,6 +66,6 @@
           </button>
     </ion-slide>
   </ion-slides>
-  
+
   
 </ion-content>
