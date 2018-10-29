@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from "../../app/models/user";
 
 import { AngularFireAuth } from "angularfire2/auth";
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the RegisterPage page.
@@ -32,7 +33,7 @@ export class RegisterPage {
 async registerPage(user: User) {
 try {
   const result = await this.ofauth.auth.createUserWithEmailAndPassword(user.email, user.password);
-  console.log(result);
+  this.navCtrl.setRoot(LoginPage);
 }
   catch (e) {
     console.error(e)
