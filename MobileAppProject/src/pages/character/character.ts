@@ -28,27 +28,27 @@ export class CharacterPage {
     this.characterRef$ = this.database.list('character-list');
   }
 
-  selectCharacter(character: Character){
-    this.actionSheetCtrl.create({
-      title: `${character.charName}`,
-      buttons: [
-        {
-          text: 'Delete',
-          role: 'desctructive',
-          handler: () => {
-          this.characterRef$.remove(character.$key)
-          }
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: () => {
-            console.log("The user selected the cancel button");
-          }
-        }          
-      ]
-    }).present();
-  }
+  // selectCharacter(character: Character){
+  //   this.actionSheetCtrl.create({
+  //     title: `${character.charName}`,
+  //     buttons: [
+  //       {
+  //         text: 'Delete',
+  //         role: 'desctructive',
+  //         handler: () => {
+  //         this.characterRef$.remove(character.$key)
+  //         }
+  //       },
+  //       {
+  //         text: 'Cancel',
+  //         role: 'cancel',
+  //         handler: () => {
+  //           console.log("The user selected the cancel button");
+  //         }
+  //       }          
+  //     ]
+  //   }).present();
+  // }
 
   onSubmit(character: Character) {
     //Pushes list of characters to firebase database

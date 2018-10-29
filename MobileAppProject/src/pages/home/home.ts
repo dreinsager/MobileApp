@@ -42,6 +42,8 @@ export class HomePage {
 
 
   selectCharacter(character: Character){
+    console.log(character);
+
     this.actionSheetCtrl.create({
       title: `${character.charName}`,
       buttons: [

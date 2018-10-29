@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from "../../app/models/user";
+import { AlertController } from 'ionic-angular';
 
 import { AngularFireAuth } from "angularfire2/auth";
 import { LoginPage } from '../login/login';
@@ -22,7 +23,7 @@ export class RegisterPage {
   user = {} as User;
 
 
-  constructor(private ofauth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public alertCtrl: AlertController, private ofauth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
 
@@ -36,7 +37,11 @@ try {
   this.navCtrl.setRoot(LoginPage);
 }
   catch (e) {
-    const alert =(e)
+    const alert = this.alertCtrl.create({
+      title: e,
+      buttons:['OK']
+    });
+    alert.present();
   }
   
   }
