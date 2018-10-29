@@ -36,7 +36,7 @@ try {
   this.navCtrl.setRoot(LoginPage);
 }
   catch (e) {
-    console.error(e)
+    const alert =(e)
   }
   
   }
