@@ -9,4 +9,11 @@ export interface Character {
     gender:string;
     class:string;
     race:string;
+    $key?:string
+}
+
+export interface Notes {
+    title: string;
+    describe: string;
+    $key?:string;
 }

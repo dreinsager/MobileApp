@@ -31,11 +31,11 @@
     </ion-slide>
     <ion-slide class="char">
         <ion-list>
-            <ion-item *ngFor="let item of characterRef$ | async">
-              <p>Character Name:{{item.charName}}<br></p>
-              <p>Gender:{{item.gender}}<br></p>
-              <p>Class:{{item.class}}<br></p>
-              <p>Race:{{item.race}}<br></p>
+            <ion-item *ngFor="let item of characterAsync | async" (click)="selectCharacter(item)">
+              <p>Character Name:&nbsp;{{item.payload.val().charName}}<br></p>
+              <p>Gender:&nbsp;{{item.payload.val().gender}}<br></p>
+              <p>Class:&nbsp;{{item.payload.val().class}}<br></p>
+              <p>Race:&nbsp;{{item.payload.val().race}}<br></p>
             </ion-item>
           </ion-list>      
          <button ion-button icon-start  (click)="toCharPage()" color="mine">
@@ -45,6 +45,13 @@
     </ion-slide>
     <ion-slide class="notes">
         <h1>Notes</h1>
+        <ion-list>
+            <ion-item *ngFor="let item of notesAsync | async" (click)="selectNotes(item)">
+              <p>Title:{{item.payload.val().title}}<br></p>
+              <p>Description:{{item.payload.val().describe}}<br></p>
+            </ion-item>
+          </ion-list>      
+
         <button ion-button icon-start (click)="toNotes()" color="mine">
             <ion-icon name="add"></ion-icon>
             Add Notes

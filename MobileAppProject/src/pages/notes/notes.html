@@ -17,13 +17,13 @@
   <ion-list>
 
     <ion-item>
-      <ion-input type="text" placeholder="Title"></ion-input>
+      <ion-input type="text" placeholder="Title" [(ngModel)]="notes.title"></ion-input>
     </ion-item>
   
     <ion-item>
-      <ion-input class="desc" type="text" placeholder="Description"></ion-input>
+      <ion-input class="desc" type="text" placeholder="Description" [(ngModel)]="notes.describe"></ion-input>
     </ion-item>
-    <button ion-button full color="mine" (click)="onSubmit()">
+    <button ion-button full color="mine" outline full (click)="onSubmit(notes)">
       Submit
     </button><br>
   </ion-list>

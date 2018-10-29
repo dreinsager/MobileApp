@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,ActionSheetController } from 'ionic-angular';
 import { TestPage } from '../test/test';
 import { CharacterPage } from '../character/character';
 import { ChardescrPage } from '../chardescr/chardescr';
@@ -8,7 +8,8 @@ import { NotesPage } from '../notes/notes';
 import { AlertController } from 'ionic-angular';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { Character } from '../../app/models/user';
-import { Observable } from 'rxjs/Observable';
+import { Notes } from '../../app/models/user';
+
 
 
 
@@ -21,23 +22,69 @@ import { Observable } from 'rxjs/Observable';
 })
 export class HomePage {
 
-  characterRef$: Observable<any[]>
+  characterRef$: AngularFireList<Character[]>
+  notesRef$: AngularFireList<Notes[]>
+  characterAsync;
+  notesAsync;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private database: AngularFireDatabase) {
 
-    this.characterRef$ = this.database.list('character-list').valueChanges();
+  constructor(private actionSheetCtrl: ActionSheetController,public navCtrl: NavController, public alertCtrl: AlertController, private database: AngularFireDatabase) {
+
+    this.characterRef$ = this.database.list('character-list');
+    this.characterAsync = this.characterRef$.snapshotChanges();
     
+    this.notesRef$ = this.database.list('notes-list');
+    this.notesAsync = this.notesRef$.snapshotChanges();
 
 
   }
 
-  onSubmit() {
-    const alert = this.alertCtrl.create({
-      subTitle: 'After login cridentials are correct you will be able to continue your work',
-      buttons: ['OK']
-    });
-    alert.present();
+
+
+  selectCharacter(character: Character){
+    this.actionSheetCtrl.create({
+      title: `${character.charName}`,
+      buttons: [
+        {
+          text: 'Delete',
+          role: 'desctructive',
+          handler: () => {
+          this.characterRef$.remove(character.$key)
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log("The user selected the cancel button");
+          }
+        }          
+      ]
+    }).present();
   }
+
+  selectNotes(notes: Notes){
+    this.actionSheetCtrl.create({
+      title: `${notes.title}`,
+      buttons: [
+        {
+          text: 'Delete',
+          role: 'desctructive',
+          handler: () => {
+          this.notesRef$.remove(notes.$key)
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log("The user selected the cancel button");
+          }
+        }          
+      ]
+    }).present();
+  }
+
 
   toDiceRoll(){
     this.navCtrl.push(TestPage);

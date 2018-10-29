@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { Notes } from '../../app/models/user';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { HomePage } from '../home/home';
+
 
 
 /**
@@ -17,15 +21,23 @@ import { AlertController } from 'ionic-angular';
 })
 export class NotesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
+  notes = {} as Notes
+
+  notesRef$: AngularFireList<Notes>
+
+
+  constructor(private database: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
+    this.notesRef$ = this.database.list('notes-list');
+
   }
 
   onSubmit() {
-    const alert = this.alertCtrl.create({
-      subTitle: 'This will send information to database and add to the notes page',
-      buttons: ['OK']
-    });
-    alert.present();
+    //Pushes list of notes to firebase database
+    this.notesRef$.push(this.notes);
+    //resets notes
+    this.notes = {} as Notes;
+    //redirect user to notes page
+    this.navCtrl.push(HomePage);
   }
 
   ionViewDidLoad() {
