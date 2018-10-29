@@ -25,12 +25,13 @@
         <ion-label>Password :</ion-label>
         <ion-input type="password" [(ngModel)]="user.password"></ion-input>
       </ion-item><br>
-      <button ion-button full color="mine" (click)="toRegister()">
-        No Account? Register Here
-      </button><br>
       <button ion-button full color="mine" (click)="Login(user)">
-          Submit
+          Login
         </button><br>
+        <button ion-button clear full color="mine" (click)="toRegister()">
+          No Account? Register Here
+        </button><br>  
+        <button ion-button clear full color="mine">Forgot Password? Click Here</button>
     </ion-list>
   </div>
 </ion-content>
