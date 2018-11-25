@@ -31,6 +31,7 @@
     </ion-slide>
     <ion-slide class="char">
         <ion-list>
+          <h1>Characters:</h1>
             <ion-item *ngFor="let item of characterAsync | async" (click)="selectCharacter(item.payload.val())">
               <p>Character Name:&nbsp;{{item.payload.val().charName}}<br></p>
               <p>Gender:&nbsp;{{item.payload.val().gender}}<br></p>
@@ -44,9 +45,9 @@
          </button>
     </ion-slide>
     <ion-slide class="notes">
-        <h1>Notes</h1>
+        <h1>Notes:</h1>
         <ion-list>
-            <ion-item *ngFor="let item of notesAsync | async" (click)="selectNotes(item)">
+            <ion-item *ngFor="let item of notesAsync | async" (click)="selectNotes(item.payload.val())">
               <p>Title:{{item.payload.val().title}}<br></p>
               <p>Description:{{item.payload.val().describe}}<br></p>
             </ion-item>
